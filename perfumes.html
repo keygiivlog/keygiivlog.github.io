@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Perfumes</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #a0e7e5, #70c1b3);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 60px;
+        }
+        .header h1 {
+            font-size: 2em;
+            color: white;
+        }
+        .container {
+            text-align: center;
+        }
+        .container img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            color: black;
+        }
+        form label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        button, input[type="submit"] {
+            margin-top: 20px;
+            margin-right: 10px; /* Añadido margen entre botones */
+            padding: 12px 25px;
+            border: none;
+            background-color: #009688;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: bold;
+            width: 150px; /* Ajustado ancho de botones */
+            max-width: 100%;
+        }
+        button:hover, input[type="submit"]:hover {
+            background-color: #00796b;
+            transform: translateY(-3px);
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        form label:nth-child(1) { animation-delay: 0.2s; }
+        form label:nth-child(3) { animation-delay: 0.4s; }
+        form label:nth-child(5) { animation-delay: 0.6s; }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bienvenido al Ingreso de Perfumes</h1>
+    </div>
+    <div class="container">
+        <img src="perfumes.jpg" alt="Imagen de Perfume">
+        <form action="perfumes.php" method="post">
+            <label for="codigo"><i class="fas fa-barcode"></i> Código de perfume:</label>
+            <input type="text" id="codigo" name="codigo" required>
+
+            <label for="nombre"><i class="fas fa-capsules"></i> Nombre de perfume:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="fabricante"><i class="fas fa-industry"></i> Fabricante de perfume:</label>
+            <input type="text" id="fabricante" name="fabricante" required>
+
+            <div class="button-container">
+                <button type="submit">Enviar</button>
+                <button onclick="window.location.href='principal.html'">Regresar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

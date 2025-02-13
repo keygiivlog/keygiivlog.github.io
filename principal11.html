@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care & Clean - Cuidado y Limpieza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #2d3e50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            margin-top: 5px;
+            font-size: 1.2em;
+        }
+        nav {
+            background-color: #f0ad4e;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .catalogo {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .producto {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 10px;
+        }
+        .producto img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .producto h3 {
+            color: #2d3e50;
+            font-size: 1.2em;
+        }
+        .producto p {
+            color: #888;
+        }
+        .cta {
+            background-color: #f0ad4e;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cta:hover {
+            background-color: #ec971f;
+        }
+        .detalles {
+            display: none;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #333;
+            text-align: left;
+        }
+        .pie-de-pagina {
+            text-align: center;
+            background-color: #2d3e50;
+            color: white;
+            padding: 20px;
+        }
+        .suscripcion-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .suscripcion-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .suscripcion-box input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .suscripcion-box button {
+            background-color: #2d3e50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+        .whatsapp-btn img {
+            width: 25px;
+            margin-right: 10px;
+        }
+        /* Animación para la ubicación */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 200px; /* Ajusta según el tamaño deseado */
+            margin-right: 10px;
+        }
+
+        .image-container h2 {
+            font-size: 1.5em;
+            color: #2d3e50;
+        }
+
+        /* Animación de desvanecimiento */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="logo_empresa.jpg" alt="Logo de Care & Clean">
+    </div>
+    <div>
+        <h1>Care & Clean - Cuidado y Limpieza</h1>
+        <p>Productos de calidad para tu bienestar y el de tu hogar</p>
+    </div>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="acerca de nosotros.html">Acerca de Nosotros</a>
+    <a href="#contacto">Contáctanos</a>
+</nav>
+
+<div id="inicio" class="catalogo">
+    <div class="producto">
+        <img src="detergente.jpg" alt="Detergente">
+        <h3>Detergente</h3>
+        <p>Producto de alta calidad para limpieza profunda.</p>
+        <button class="cta" onclick="toggleDetalles('detergente')">Oferta</button>
+        <div id="detergente" class="detalles">
+            <p><strong>1 LITRO:</strong> 2 UNDS PVP = $3,00</p>
+        </div>
+    </div>
+    <div class="producto">
+        <img src="lavavajillas.jpg" alt="Lavavajillas">
+        <h3>Lavavajillas Líquido</h3>
+        <p>Ideal para una limpieza eficiente y segura.</p>
+        <button class="cta" onclick="toggleDetalles('lavavajillas')">Oferta</button>
+        <div id="lavavajillas" class="detalles">
+            <p><strong>250 ML:</strong> 8 UNDS PVP = $1,25</p>
+            <p><strong>500 ML:</strong> 3 UNDS PVP = $1,75</p>
+        </div>
+    </div>
+    <div class="producto">
+        <img src="gel_antibacterial.jpg" alt="Antibacterial">
+        <h3>Antibacterial</h3>
+        <p>Elimina bacterias y mantiene tu hogar seguro.</p>
+        <button class="cta" onclick="toggleDetalles('antibacterial')">Oferta</button>
+        <div id="antibacterial" class="detalles">
+            <p><strong>40 ML:</strong> 10 UNDS PVP = $1,00</p>
+            <p><strong>60 ML:</strong> 6 UNDS PVP = $1,25</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <a href="SQL.html">
+        <img src="ubicacion.png" alt="Imagen 1">
+        
+    </a>
+</div>
+
+<div class="suscripcion-container">
+    <div class="suscripcion-box">
+        <h2>SUSCRÍBETE Y OBTÉN UN 10% DE DESCUENTO</h2>
+        <form action="suscripcion.php" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+            <input type="tel" name="telefono" placeholder="Número de Celular" required>
+            <button type="submit">Suscríbete</button>
+        </form>
+    </div>
+</div>
+
+<div class="pie-de-pagina" id="contacto">
+    <p><a class="whatsapp-btn" href="https://wa.me/593997643733" target="_blank">
+        <img src="whatsapp-icon.png" alt="WhatsApp"> Contactanos por WhatsApp
+    </a></p>
+    <p>© 2025 Care & Clean | Todos los derechos reservados</p>
+</div>
+
+<script>
+    function toggleDetalles(id) {
+        const detalles = document.getElementById(id);
+        if (detalles.style.display === "none" || detalles.style.display === "") {
+            detalles.style.display = "block";
+        } else {
+            detalles.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ventas</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e57373, #757575);
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2em;
+        }
+        form {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            color: #333;
+            transition: opacity 0.5s, transform 0.5s;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s forwards;
+        }
+        form.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInLabel 0.5s forwards;
+        }
+        form input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInInput 0.5s forwards;
+        }
+        button, input[type="submit"] {
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: none;
+            background-color: #ff5252;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 200px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInButton 0.5s forwards;
+        }
+        button:hover, input[type="submit"]:hover {
+            background-color: #e53935;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInLabel {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInInput {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInButton {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bienvenido al Ingreso de Ventas</h1>
+    </div>
+    <div class="container">
+        <img src="ventas.png" alt="imagen">
+    </div>
+    <form action="ventas.php" method="post" class="visible">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="precio">Precio Total:</label>
+        <input type="text" id="precio" name="precio" required>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <button onclick="window.location.href='principal.html'" class="visible">Regresar</button>
+
+    <script>
+        // Mostrar el formulario y el botón con animaciones al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const button = document.querySelector('button');
+            form.classList.add('visible');
+            button.classList.add('visible');
+        });
+    </script>
+</body>
+</html>

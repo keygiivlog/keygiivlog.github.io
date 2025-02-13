@@ -1,0 +1,30 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    animation: fadeIn 1s ease-out;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 200px; /* Ajusta según el tamaño deseado */
+    margin-right: 10px;
+}
+
+.image-container h2 {
+    font-size: 1.5em;
+    color: #2d3e50;
+}
+
+/* Animación para el desvanecimiento */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
