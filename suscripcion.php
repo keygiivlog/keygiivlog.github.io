@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Si el correo ya está registrado
         echo "<script>
             alert('Este correo ya está registrado. Por favor, utiliza otro correo.');
-            window.location.href = 'http://localhost/emprendedor/principal.html';
+            window.location.href = 'http://localhost/emprendedor/keygiivlog.github.io/index.html';
         </script>";
     } else {
         // Si el correo es nuevo, insertar datos y mostrar mensaje de éxito con confeti
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->execute()) {
             echo "<script>
                 alert('¡Felicidades! Ya tienes un 10% de descuento en tu primera compra.');
-                window.location.href = 'http://localhost/emprendedor/principal.html'; // Redirecciona a localhost (principal.html)
+                window.location.href = 'http://localhost/emprendedor/keygiivlog.github.io/index.html'; // Redirecciona a localhost (index.html)
                 // Añadir animación de confetti aquí
                 document.body.innerHTML += '<div id=\"confetti\"></div>'; // Crea el contenedor de confetti
                 let confetti = document.getElementById('confetti');
