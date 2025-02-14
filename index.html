@@ -303,7 +303,7 @@
             telefono: document.getElementById("telefono").value
         };
 
-        fetch("https://docs.google.com/spreadsheets/d/1Ic1JHoQlu2rsTjjduNQDfZ6LUT3PyHT_DL88NlhS128/edit?usp=sharing", {
+        fetch("https://script.google.com/macros/s/AKfycbxmJTg1yfAQdd_wStVhYJ3pjzOoHk54oPQ2UhjyD_llGp0CQEpW0Eg6EUyztoIM8v_S/exec", {
             method: "POST",
             body: JSON.stringify(data),
             headers: { "Content-Type": "application/json" }
