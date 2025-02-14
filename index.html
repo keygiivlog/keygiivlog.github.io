@@ -294,7 +294,8 @@
 </div>
 
 <script>
-   const formulario = document.getElementById('formulario');
+document.addEventListener('DOMContentLoaded', function() {  
+const formulario = document.getElementById('formulario');
 
 formulario.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -317,6 +318,7 @@ mode: 'cors',
         })
         .catch(error => console.error("Error:", error));
     });
+});
 </script>
 
 
