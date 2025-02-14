@@ -279,9 +279,15 @@
     <div class="suscripcion-box">
         <h2>SUSCRÍBETE Y OBTÉN UN 10% DE DESCUENTO</h2>
         <form id="form">
+            <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" placeholder="Tu Nombre" required>
+
+            <label for="email">Correo:</label>
             <input type="email" id="email" placeholder="Tu Correo" required>
+
+            <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" placeholder="Tu Teléfono" required>
+
             <button type="submit">Suscribirse</button>
         </form>
     </div>
@@ -297,7 +303,7 @@
             telefono: document.getElementById("telefono").value
         };
 
-        fetch(https://script.google.com/macros/s/AKfycbxo7XfVgG4PuWO8YPa6iUeWx5jh7dV7ZppldRzecukEi-Cc1DkxayrX7RNJdnsAUkP4/exec, {
+        fetch(https://script.google.com/macros/s/AKfycby4TBq-eBfiadDpvRdStBK3NQ3pCTfRLM9YxfH-lWiKyfL8xHXZJ1ogqMy2t1t8Yii3/exec, {
             method: "POST",
             body: JSON.stringify(data),
             headers: { "Content-Type": "application/json" }
@@ -309,6 +315,7 @@
         .catch(error => console.error("Error:", error));
     });
 </script>
+
 
 
 <div class="pie-de-pagina" id="contacto">
