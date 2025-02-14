@@ -278,38 +278,14 @@
 <div class="suscripcion-container">
     <div class="suscripcion-box">
         <h2>SUSCRÍBETE Y OBTÉN UN 10% DE DESCUENTO</h2>
-        <form id="form">
-            <input type="text" id="nombre" placeholder="Tu Nombre" required>
-            <input type="email" id="email" placeholder="Tu Correo" required>
-            <input type="tel" id="telefono" placeholder="Tu Teléfono" required>
-            <button type="submit">Suscribirse</button>
+        <form action="suscripcion.php" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+            <input type="tel" name="telefono" placeholder="Número de Celular" required>
+            <button type="submit">Suscríbete</button>
         </form>
     </div>
 </div>
-
-<script>
-    document.getElementById("form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        let data = {
-            nombre: document.getElementById("nombre").value,
-            email: document.getElementById("email").value,
-            telefono: document.getElementById("telefono").value
-        };
-
-        fetch(https://script.google.com/macros/s/AKfycbxo7XfVgG4PuWO8YPa6iUeWx5jh7dV7ZppldRzecukEi-Cc1DkxayrX7RNJdnsAUkP4/exec, {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: { "Content-Type": "application/json" }
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert("¡Registrado con éxito!");
-        })
-        .catch(error => console.error("Error:", error));
-    });
-</script>
-
 
 <div class="pie-de-pagina" id="contacto">
     <p><a class="whatsapp-btn" href="https://wa.me/593997643733" target="_blank">
