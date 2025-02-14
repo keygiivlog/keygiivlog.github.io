@@ -278,14 +278,48 @@
 <div class="suscripcion-container">
     <div class="suscripcion-box">
         <h2>SUSCRÍBETE Y OBTÉN UN 10% DE DESCUENTO</h2>
-        <form action="suscripcion.php" method="POST">
-            <input type="text" name="nombre" placeholder="Nombre" required>
-            <input type="email" name="email" placeholder="Correo Electrónico" required>
-            <input type="tel" name="telefono" placeholder="Número de Celular" required>
-            <button type="submit">Suscríbete</button>
+        <form id="form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Tu Nombre" required>
+
+            <label for="email">Correo:</label>
+            <input type="email" id="email" placeholder="Tu Correo" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" placeholder="Tu Teléfono" required>
+
+            <button type="submit">Suscribirse</button>
         </form>
     </div>
 </div>
+
+<script>
+   cont formulario = document.getElementById("formulario")
+formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        let data = {
+            nombre: document.getElementById("nombre").value,
+            email: document.getElementById("email").value,
+            telefono: document.getElementById("telefono").value
+        };
+
+        fetch("https://api.sheetbest.com/sheets/96934f59-3077-41c8-aadd-1b2429acdcf4", {
+            method: "POST",
+mode: 'cors',
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" }
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("¡Registrado con éxito!");
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
+
+
 
 <div class="pie-de-pagina" id="contacto">
     <p><a class="whatsapp-btn" href="https://wa.me/593997643733" target="_blank">

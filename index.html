@@ -307,8 +307,11 @@ formulario.addEventListener("submit", (e) => {
         fetch("https://api.sheetbest.com/sheets/96934f59-3077-41c8-aadd-1b2429acdcf4", {
             method: "POST",
 mode: 'cors',
-            body: JSON.stringify(data),
-            headers: { "Content-Type": "application/json" }
+ headers: { "Content-Type": "application/json"},
+            body: JSON.stringify(data)({
+"Nombre": formulario.nombre.value,
+            "Correo": formulario.correo.value,
+"Telefono": formulario.telefono.value})
         })
         .then(response => response.text())
         .then(data => {
