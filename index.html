@@ -303,7 +303,6 @@
             telefono: document.getElementById("telefono").value
         };
 
-        // Corregir la URL de Google Apps Script agregando comillas
         fetch("https://docs.google.com/spreadsheets/d/1Ic1JHoQlu2rsTjjduNQDfZ6LUT3PyHT_DL88NlhS128/edit?usp=sharing", {
             method: "POST",
             body: JSON.stringify(data),
@@ -312,12 +311,11 @@
         .then(response => response.text())
         .then(data => {
             alert("¡Registrado con éxito!");
-            // Limpiar el formulario después del envío
-            document.getElementById("form").reset();
         })
         .catch(error => console.error("Error:", error));
     });
 </script>
+
 
 
 
