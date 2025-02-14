@@ -303,7 +303,8 @@
             telefono: document.getElementById("telefono").value
         };
 
-        fetch(https://script.google.com/macros/s/AKfycby4TBq-eBfiadDpvRdStBK3NQ3pCTfRLM9YxfH-lWiKyfL8xHXZJ1ogqMy2t1t8Yii3/exec, {
+        // Corregir la URL de Google Apps Script agregando comillas
+        fetch("https://script.google.com/macros/s/AKfycby4TBq-eBfiadDpvRdStBK3NQ3pCTfRLM9YxfH-lWiKyfL8xHXZJ1ogqMy2t1t8Yii3/exec", {
             method: "POST",
             body: JSON.stringify(data),
             headers: { "Content-Type": "application/json" }
@@ -311,6 +312,8 @@
         .then(response => response.text())
         .then(data => {
             alert("¡Registrado con éxito!");
+            // Limpiar el formulario después del envío
+            document.getElementById("form").reset();
         })
         .catch(error => console.error("Error:", error));
     });
